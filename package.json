@@ -1,7 +1,7 @@
 {
   "name": "travel3dglobe",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reusable 3D globe component with visual config editor workflow",
   "type": "module",
   "repository": {
