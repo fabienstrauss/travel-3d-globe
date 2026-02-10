@@ -2,7 +2,17 @@
   "name": "travel3dglobe",
   "private": false,
   "version": "0.1.1",
+  "description": "Reusable 3D globe component with visual config editor workflow",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabienstrauss/travel-3d-globe.git"
+  },
+  "homepage": "https://github.com/fabienstrauss/travel-3d-globe#readme",
+  "bugs": {
+    "url": "https://github.com/fabienstrauss/travel-3d-globe/issues"
+  },
+  "license": "MIT",
   "main": "./dist-lib/travel3dglobe.js",
   "module": "./dist-lib/travel3dglobe.js",
   "exports": {

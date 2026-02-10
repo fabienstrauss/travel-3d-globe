@@ -4,7 +4,7 @@ A reusable 3D globe component with a visual config editor that can export/import
 
 ## Editor App
 
-Hosted editor (Vercel): `<VERCEL_APP_URL>`
+Hosted editor (Vercel): `https://travel-3d-globe.vercel.app/`
 
 This app lets you tune globe settings visually and export a config JSON for use in your own project.
 
@@ -13,19 +13,19 @@ This app lets you tune globe settings visually and export a config JSON for use 
 From npm:
 
 ```bash
-npm install <NPM_PACKAGE_NAME>
+npm install travel3dglobe
 ```
 
 From GitHub:
 
 ```bash
-npm install github:<GITHUB_USER>/<GITHUB_REPO>#<TAG_OR_BRANCH>
+npm install github:fabienstrauss/travel-3d-globe#main
 ```
 
 ## Component Usage
 
 ```js
-import { createGlobe } from '<NPM_PACKAGE_NAME>';
+import { createGlobe } from 'travel3dglobe';
 
 const globe = await createGlobe({
   container: document.getElementById('globe-root'),
@@ -66,7 +66,7 @@ Notes:
 
 ## License
 
-`<LICENSE_TYPE>` (for example `MIT`). See `LICENSE`.
+MIT. See `LICENSE`.
 
 ## Contributing
 
