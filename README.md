@@ -4,7 +4,7 @@ A reusable 3D globe component with a visual config editor that can export/import
 
 ## Editor App
 
-Hosted editor (Vercel): `https://travel-3d-globe.vercel.app/`
+Hosted editor (Vercel): [travel-3d-globe.vercel.app](https://travel-3d-globe.vercel.app/)
 
 This app lets you tune globe settings visually and export a config JSON for use in your own project.
 
@@ -66,7 +66,7 @@ Notes:
 
 ## License
 
-MIT. See `LICENSE`.
+[MIT](./LICENSE)
 
 ## Contributing
 
