@@ -62,7 +62,7 @@ function Ge(i, t) {
     f(), e = null, n = null, a = null, l = null;
   }
 }
-function Fe(i, t, e = {}) {
+function De(i, t, e = {}) {
   let n = !1, a = 0, l = 0, s = 0, r = 0, f = null;
   const g = {
     autoRotate: !1,
@@ -104,7 +104,7 @@ function Fe(i, t, e = {}) {
     t.removeEventListener("pointerdown", d), window.removeEventListener("pointermove", y), window.removeEventListener("pointerup", b), window.removeEventListener("pointercancel", b);
   }
 }
-const J = 11102230246251565e-32, B = 134217729, Ae = (3 + 8 * J) * J;
+const T = 11102230246251565e-32, B = 134217729, Fe = (3 + 8 * T) * T;
 function le(i, t, e, n, a) {
   let l, s, r, f, g = t[0], h = n[0], c = 0, d = 0;
   h > g == h > -g ? (l = g, g = t[++c]) : (l = h, h = n[++d]);
@@ -118,7 +118,7 @@ function le(i, t, e, n, a) {
     s = l + h, f = s - l, r = l - (s - f) + (h - f), h = n[++d], l = s, r !== 0 && (a[y++] = r);
   return (l !== 0 || y === 0) && (a[y++] = l), y;
 }
-function De(i, t) {
+function Ae(i, t) {
   let e = t[0];
   for (let n = 1; n < i; n++) e += t[n];
   return e;
@@ -126,24 +126,24 @@ function De(i, t) {
 function Q(i) {
   return new Float64Array(i);
 }
-const ke = (3 + 16 * J) * J, Ue = (2 + 12 * J) * J, Be = (9 + 64 * J) * J * J, Y = Q(4), pe = Q(8), ye = Q(12), be = Q(16), X = Q(4);
+const Ue = (3 + 16 * T) * T, ke = (2 + 12 * T) * T, Be = (9 + 64 * T) * T * T, Y = Q(4), pe = Q(8), ye = Q(12), be = Q(16), X = Q(4);
 function Xe(i, t, e, n, a, l, s) {
-  let r, f, g, h, c, d, y, b, m, L, o, x, C, M, O, G, A, E;
+  let r, f, g, h, c, d, y, b, m, L, o, x, C, M, O, G, F, E;
   const u = i - a, w = e - a, S = t - l, v = n - l;
-  M = u * v, d = B * u, y = d - (d - u), b = u - y, d = B * v, m = d - (d - v), L = v - m, O = b * L - (M - y * m - b * m - y * L), G = S * w, d = B * S, y = d - (d - S), b = S - y, d = B * w, m = d - (d - w), L = w - m, A = b * L - (G - y * m - b * m - y * L), o = O - A, c = O - o, Y[0] = O - (o + c) + (c - A), x = M + o, c = x - M, C = M - (x - c) + (o - c), o = C - G, c = C - o, Y[1] = C - (o + c) + (c - G), E = x + o, c = E - x, Y[2] = x - (E - c) + (o - c), Y[3] = E;
-  let I = De(4, Y), F = Ue * s;
-  if (I >= F || -I >= F || (c = i - u, r = i - (u + c) + (c - a), c = e - w, g = e - (w + c) + (c - a), c = t - S, f = t - (S + c) + (c - l), c = n - v, h = n - (v + c) + (c - l), r === 0 && f === 0 && g === 0 && h === 0) || (F = Be * s + Ae * Math.abs(I), I += u * h + v * r - (S * g + w * f), I >= F || -I >= F)) return I;
-  M = r * v, d = B * r, y = d - (d - r), b = r - y, d = B * v, m = d - (d - v), L = v - m, O = b * L - (M - y * m - b * m - y * L), G = f * w, d = B * f, y = d - (d - f), b = f - y, d = B * w, m = d - (d - w), L = w - m, A = b * L - (G - y * m - b * m - y * L), o = O - A, c = O - o, X[0] = O - (o + c) + (c - A), x = M + o, c = x - M, C = M - (x - c) + (o - c), o = C - G, c = C - o, X[1] = C - (o + c) + (c - G), E = x + o, c = E - x, X[2] = x - (E - c) + (o - c), X[3] = E;
-  const k = le(4, Y, 4, X, pe);
-  M = u * h, d = B * u, y = d - (d - u), b = u - y, d = B * h, m = d - (d - h), L = h - m, O = b * L - (M - y * m - b * m - y * L), G = S * g, d = B * S, y = d - (d - S), b = S - y, d = B * g, m = d - (d - g), L = g - m, A = b * L - (G - y * m - b * m - y * L), o = O - A, c = O - o, X[0] = O - (o + c) + (c - A), x = M + o, c = x - M, C = M - (x - c) + (o - c), o = C - G, c = C - o, X[1] = C - (o + c) + (c - G), E = x + o, c = E - x, X[2] = x - (E - c) + (o - c), X[3] = E;
-  const R = le(k, pe, 4, X, ye);
-  M = r * h, d = B * r, y = d - (d - r), b = r - y, d = B * h, m = d - (d - h), L = h - m, O = b * L - (M - y * m - b * m - y * L), G = f * g, d = B * f, y = d - (d - f), b = f - y, d = B * g, m = d - (d - g), L = g - m, A = b * L - (G - y * m - b * m - y * L), o = O - A, c = O - o, X[0] = O - (o + c) + (c - A), x = M + o, c = x - M, C = M - (x - c) + (o - c), o = C - G, c = C - o, X[1] = C - (o + c) + (c - G), E = x + o, c = E - x, X[2] = x - (E - c) + (o - c), X[3] = E;
-  const D = le(R, ye, 4, X, be);
-  return be[D - 1];
+  M = u * v, d = B * u, y = d - (d - u), b = u - y, d = B * v, m = d - (d - v), L = v - m, O = b * L - (M - y * m - b * m - y * L), G = S * w, d = B * S, y = d - (d - S), b = S - y, d = B * w, m = d - (d - w), L = w - m, F = b * L - (G - y * m - b * m - y * L), o = O - F, c = O - o, Y[0] = O - (o + c) + (c - F), x = M + o, c = x - M, C = M - (x - c) + (o - c), o = C - G, c = C - o, Y[1] = C - (o + c) + (c - G), E = x + o, c = E - x, Y[2] = x - (E - c) + (o - c), Y[3] = E;
+  let I = Ae(4, Y), D = ke * s;
+  if (I >= D || -I >= D || (c = i - u, r = i - (u + c) + (c - a), c = e - w, g = e - (w + c) + (c - a), c = t - S, f = t - (S + c) + (c - l), c = n - v, h = n - (v + c) + (c - l), r === 0 && f === 0 && g === 0 && h === 0) || (D = Be * s + Fe * Math.abs(I), I += u * h + v * r - (S * g + w * f), I >= D || -I >= D)) return I;
+  M = r * v, d = B * r, y = d - (d - r), b = r - y, d = B * v, m = d - (d - v), L = v - m, O = b * L - (M - y * m - b * m - y * L), G = f * w, d = B * f, y = d - (d - f), b = f - y, d = B * w, m = d - (d - w), L = w - m, F = b * L - (G - y * m - b * m - y * L), o = O - F, c = O - o, X[0] = O - (o + c) + (c - F), x = M + o, c = x - M, C = M - (x - c) + (o - c), o = C - G, c = C - o, X[1] = C - (o + c) + (c - G), E = x + o, c = E - x, X[2] = x - (E - c) + (o - c), X[3] = E;
+  const U = le(4, Y, 4, X, pe);
+  M = u * h, d = B * u, y = d - (d - u), b = u - y, d = B * h, m = d - (d - h), L = h - m, O = b * L - (M - y * m - b * m - y * L), G = S * g, d = B * S, y = d - (d - S), b = S - y, d = B * g, m = d - (d - g), L = g - m, F = b * L - (G - y * m - b * m - y * L), o = O - F, c = O - o, X[0] = O - (o + c) + (c - F), x = M + o, c = x - M, C = M - (x - c) + (o - c), o = C - G, c = C - o, X[1] = C - (o + c) + (c - G), E = x + o, c = E - x, X[2] = x - (E - c) + (o - c), X[3] = E;
+  const R = le(U, pe, 4, X, ye);
+  M = r * h, d = B * r, y = d - (d - r), b = r - y, d = B * h, m = d - (d - h), L = h - m, O = b * L - (M - y * m - b * m - y * L), G = f * g, d = B * f, y = d - (d - f), b = f - y, d = B * g, m = d - (d - g), L = g - m, F = b * L - (G - y * m - b * m - y * L), o = O - F, c = O - o, X[0] = O - (o + c) + (c - F), x = M + o, c = x - M, C = M - (x - c) + (o - c), o = C - G, c = C - o, X[1] = C - (o + c) + (c - G), E = x + o, c = E - x, X[2] = x - (E - c) + (o - c), X[3] = E;
+  const A = le(R, ye, 4, X, be);
+  return be[A - 1];
 }
 function $(i, t, e, n, a, l) {
   const s = (t - l) * (e - a), r = (i - a) * (n - l), f = s - r, g = Math.abs(s + r);
-  return Math.abs(f) >= ke * g ? f : -Xe(i, t, e, n, a, l, g);
+  return Math.abs(f) >= Ue * g ? f : -Xe(i, t, e, n, a, l, g);
 }
 const we = Math.pow(2, -52), Z = new Uint32Array(512);
 class de {
@@ -184,7 +184,7 @@ class de {
     let x = t[2 * b], C = t[2 * b + 1], M = 1 / 0;
     for (let u = 0; u < s; u++) {
       if (u === y || u === b) continue;
-      const w = Te(L, o, x, C, t[2 * u], t[2 * u + 1]);
+      const w = Je(L, o, x, C, t[2 * u], t[2 * u + 1]);
       w < M && (m = u, M = w);
     }
     let O = t[2 * m], G = t[2 * m + 1];
@@ -195,8 +195,8 @@ class de {
       const u = new Uint32Array(s);
       let w = 0;
       for (let S = 0, v = -1 / 0; S < s; S++) {
-        const I = this._ids[S], F = this._dists[I];
-        F > v && (u[w++] = I, v = F);
+        const I = this._ids[S], D = this._dists[I];
+        D > v && (u[w++] = I, v = D);
       }
       this.hull = u.subarray(0, w), this.triangles = new Uint32Array(0), this.halfedges = new Uint32Array(0);
       return;
@@ -205,36 +205,36 @@ class de {
       const u = b, w = x, S = C;
       b = m, x = O, C = G, m = u, O = w, G = S;
     }
-    const A = Je(L, o, x, C, O, G);
-    this._cx = A.x, this._cy = A.y;
+    const F = Te(L, o, x, C, O, G);
+    this._cx = F.x, this._cy = F.y;
     for (let u = 0; u < s; u++)
-      this._dists[u] = se(t[2 * u], t[2 * u + 1], A.x, A.y);
+      this._dists[u] = se(t[2 * u], t[2 * u + 1], F.x, F.y);
     H(this._ids, this._dists, 0, s - 1), this._hullStart = y;
     let E = 3;
     n[y] = e[m] = b, n[b] = e[y] = m, n[m] = e[b] = y, a[y] = 0, a[b] = 1, a[m] = 2, l.fill(-1), l[this._hashKey(L, o)] = y, l[this._hashKey(x, C)] = b, l[this._hashKey(O, G)] = m, this.trianglesLen = 0, this._addTriangle(y, b, m, -1, -1, -1);
     for (let u = 0, w, S; u < this._ids.length; u++) {
-      const v = this._ids[u], I = t[2 * v], F = t[2 * v + 1];
-      if (u > 0 && Math.abs(I - w) <= we && Math.abs(F - S) <= we || (w = I, S = F, v === y || v === b || v === m)) continue;
-      let k = 0;
-      for (let V = 0, ie = this._hashKey(I, F); V < this._hashSize && (k = l[(ie + V) % this._hashSize], !(k !== -1 && k !== n[k])); V++)
+      const v = this._ids[u], I = t[2 * v], D = t[2 * v + 1];
+      if (u > 0 && Math.abs(I - w) <= we && Math.abs(D - S) <= we || (w = I, S = D, v === y || v === b || v === m)) continue;
+      let U = 0;
+      for (let V = 0, ie = this._hashKey(I, D); V < this._hashSize && (U = l[(ie + V) % this._hashSize], !(U !== -1 && U !== n[U])); V++)
         ;
-      k = e[k];
-      let R = k, D;
-      for (; D = n[R], $(I, F, t[2 * R], t[2 * R + 1], t[2 * D], t[2 * D + 1]) >= 0; )
-        if (R = D, R === k) {
+      U = e[U];
+      let R = U, A;
+      for (; A = n[R], $(I, D, t[2 * R], t[2 * R + 1], t[2 * A], t[2 * A + 1]) >= 0; )
+        if (R = A, R === U) {
           R = -1;
           break;
         }
       if (R === -1) continue;
-      let T = this._addTriangle(R, v, n[R], -1, -1, a[R]);
-      a[v] = this._legalize(T + 2), a[R] = T, E++;
-      let N = n[R];
-      for (; D = n[N], $(I, F, t[2 * N], t[2 * N + 1], t[2 * D], t[2 * D + 1]) < 0; )
-        T = this._addTriangle(N, v, D, a[v], -1, a[N]), a[v] = this._legalize(T + 2), n[N] = N, E--, N = D;
-      if (R === k)
-        for (; D = e[R], $(I, F, t[2 * D], t[2 * D + 1], t[2 * R], t[2 * R + 1]) < 0; )
-          T = this._addTriangle(D, v, R, -1, a[R], a[D]), this._legalize(T + 2), a[D] = T, n[R] = R, E--, R = D;
-      this._hullStart = e[v] = R, n[R] = e[N] = v, n[v] = N, l[this._hashKey(I, F)] = v, l[this._hashKey(t[2 * R], t[2 * R + 1])] = R;
+      let J = this._addTriangle(R, v, n[R], -1, -1, a[R]);
+      a[v] = this._legalize(J + 2), a[R] = J, E++;
+      let j = n[R];
+      for (; A = n[j], $(I, D, t[2 * j], t[2 * j + 1], t[2 * A], t[2 * A + 1]) < 0; )
+        J = this._addTriangle(j, v, A, a[v], -1, a[j]), a[v] = this._legalize(J + 2), n[j] = j, E--, j = A;
+      if (R === U)
+        for (; A = e[R], $(I, D, t[2 * A], t[2 * A + 1], t[2 * R], t[2 * R + 1]) < 0; )
+          J = this._addTriangle(A, v, R, -1, a[R], a[A]), this._legalize(J + 2), a[A] = J, n[R] = R, E--, R = A;
+      this._hullStart = e[v] = R, n[R] = e[j] = v, n[v] = j, l[this._hashKey(I, D)] = v, l[this._hashKey(t[2 * R], t[2 * R + 1])] = R;
     }
     this.hull = new Uint32Array(E);
     for (let u = 0, w = this._hullStart; u < E; u++)
@@ -242,7 +242,7 @@ class de {
     this.triangles = this._triangles.subarray(0, this.trianglesLen), this.halfedges = this._halfedges.subarray(0, this.trianglesLen);
   }
   _hashKey(t, e) {
-    return Math.floor(je(t - this._cx, e - this._cy) * this._hashSize) % this._hashSize;
+    return Math.floor(Ne(t - this._cx, e - this._cy) * this._hashSize) % this._hashSize;
   }
   _legalize(t) {
     const { _triangles: e, _halfedges: n, coords: a } = this;
@@ -255,7 +255,7 @@ class de {
         continue;
       }
       const g = r - r % 3, h = f + (t + 1) % 3, c = g + (r + 2) % 3, d = e[s], y = e[t], b = e[h], m = e[c];
-      if (Ne(
+      if (je(
         a[2 * d],
         a[2 * d + 1],
         a[2 * y],
@@ -296,7 +296,7 @@ class de {
     return this._triangles[r] = t, this._triangles[r + 1] = e, this._triangles[r + 2] = n, this._link(r, a), this._link(r + 1, l), this._link(r + 2, s), this.trianglesLen += 3, r;
   }
 }
-function je(i, t) {
+function Ne(i, t) {
   const e = i / (Math.abs(i) + Math.abs(t));
   return (t > 0 ? 3 - e : 1 + e) / 4;
 }
@@ -304,15 +304,15 @@ function se(i, t, e, n) {
   const a = i - e, l = t - n;
   return a * a + l * l;
 }
-function Ne(i, t, e, n, a, l, s, r) {
+function je(i, t, e, n, a, l, s, r) {
   const f = i - s, g = t - r, h = e - s, c = n - r, d = a - s, y = l - r, b = f * f + g * g, m = h * h + c * c, L = d * d + y * y;
   return f * (c * L - m * y) - g * (h * L - m * d) + b * (h * y - c * d) < 0;
 }
-function Te(i, t, e, n, a, l) {
+function Je(i, t, e, n, a, l) {
   const s = e - i, r = n - t, f = a - i, g = l - t, h = s * s + r * r, c = f * f + g * g, d = 0.5 / (s * g - r * f), y = (g * h - r * c) * d, b = (s * c - f * h) * d;
   return y * y + b * b;
 }
-function Je(i, t, e, n, a, l) {
+function Te(i, t, e, n, a, l) {
   const s = e - i, r = n - t, f = a - i, g = l - t, h = s * s + r * r, c = f * f + g * g, d = 0.5 / (s * g - r * f), y = i + (g * h - r * c) * d, b = t + (s * c - f * h) * d;
   return { x: y, y: b };
 }
@@ -373,7 +373,7 @@ function Ce(i, t) {
   }
   return a;
 }
-function Ze(i, t, e = {}) {
+function it(i, t, e = {}) {
   let n = 0;
   for (let u = 0; u < i.length - 1; u++) {
     const [w, S] = i[u], [v, I] = i[u + 1];
@@ -382,10 +382,10 @@ function Ze(i, t, e = {}) {
   n /= i.length;
   const a = [];
   for (let u = 0; u < i.length - 1; u++) {
-    const [w, S] = i[u], [v, I] = i[u + 1], F = Math.sqrt((v - w) ** 2 + (I - S) ** 2);
-    let k = 1;
-    if (n > 0.5 && (k = Math.max(1, Math.ceil(F / 2))), k > 1) {
-      const R = Ve(i[u], i[u + 1], k);
+    const [w, S] = i[u], [v, I] = i[u + 1], D = Math.sqrt((v - w) ** 2 + (I - S) ** 2);
+    let U = 1;
+    if (n > 0.5 && (U = Math.max(1, Math.ceil(D / 2))), U > 1) {
+      const R = Ve(i[u], i[u + 1], U);
       a.push(...R.slice(0, -1));
     } else
       a.push(i[u]);
@@ -420,15 +420,15 @@ function Ze(i, t, e = {}) {
     return console.warn("Delaunator triangulation failed for polygon"), new _.BufferGeometry();
   const O = [];
   for (let u = 0; u < M.triangles.length; u += 3) {
-    const w = M.triangles[u], S = M.triangles[u + 1], v = M.triangles[u + 2], I = (C[w][0] + C[S][0] + C[v][0]) / 3, F = (C[w][1] + C[S][1] + C[v][1]) / 3, k = I + o, R = F + x;
-    Ce([k, R], i) && O.push(w, S, v);
+    const w = M.triangles[u], S = M.triangles[u + 1], v = M.triangles[u + 2], I = (C[w][0] + C[S][0] + C[v][0]) / 3, D = (C[w][1] + C[S][1] + C[v][1]) / 3, U = I + o, R = D + x;
+    Ce([U, R], i) && O.push(w, S, v);
   }
   if (O.length === 0)
     return console.warn("No valid triangles after filtering"), new _.BufferGeometry();
-  const G = O, A = new _.BufferGeometry(), E = new Float32Array(L.length * 3);
+  const G = O, F = new _.BufferGeometry(), E = new Float32Array(L.length * 3);
   for (let u = 0; u < L.length; u++)
     E[u * 3 + 0] = L[u].x, E[u * 3 + 1] = L[u].y, E[u * 3 + 2] = L[u].z;
-  return A.setAttribute("position", new _.BufferAttribute(E, 3)), A.setIndex(new _.BufferAttribute(new Uint32Array(G), 1)), A.computeVertexNormals(), A;
+  return F.setAttribute("position", new _.BufferAttribute(E, 3)), F.setIndex(new _.BufferAttribute(new Uint32Array(G), 1)), F.computeVertexNormals(), F;
 }
 function qe(i, t, e = 20, n = 20, a = 1, l = "#ffffff") {
   for (let s = -90 + e; s < 90; s += e) {
@@ -504,9 +504,14 @@ function We(i, t = 1.15, e = 1846706, n = 45) {
 function ee(i, t) {
   !i || !i.material || !i.material.uniforms || (i.visible = t.showHalo, i.material.uniforms.glowColor.value.setStyle(t.haloColor), i.material.uniforms.c.value = t.haloIntensity, i.material.uniforms.p.value = t.haloPower, i.material.opacity = t.globalOpacity !== void 0 ? t.globalOpacity : 1);
 }
-const Se = {
-  "110m": "/geojson/ne_110m_admin_0_countries.json"
-}, te = "110m", Ke = /^#([0-9a-fA-F]{6})$/, fe = 1, U = {
+const Ke = "ne_110m_admin_0_countries.json";
+function Qe() {
+  const i = import.meta.url, t = i.includes("/src/config/") ? "../assets/geojson" : "./geojson";
+  return new URL(`${t}/${Ke}`, i).href;
+}
+const $e = Qe(), Se = {
+  "110m": $e
+}, te = "110m", Ze = /^#([0-9a-fA-F]{6})$/, fe = 1, k = {
   schemaVersion: fe,
   geoJsonResolution: te,
   geoJsonUrl: Se[te],
@@ -575,24 +580,24 @@ function K(i) {
 }
 function he(i) {
   const t = i && typeof i == "object" ? i.settings && typeof i.settings == "object" ? i.settings : i : {}, e = {
-    ...U,
+    ...k,
     ...t
   };
-  return e.schemaVersion = fe, e.geoJsonResolution = te, e.geoJsonUrl = K(), e.progressiveLoading = !!e.progressiveLoading, e.batchSize = P(e.batchSize, 20, 5, 100), e.highlightCodes = Array.isArray(e.highlightCodes) ? e.highlightCodes.filter((n) => typeof n == "string").map((n) => n.trim().toUpperCase()).filter((n) => n.length > 0) : [...U.highlightCodes], e.highlightColor = j(e.highlightColor, U.highlightColor), e.defaultColor = j(e.defaultColor, U.defaultColor), e.outlineColor = j(e.outlineColor, U.outlineColor), e.outlineOpacity = P(e.outlineOpacity, 1, 0, 1), e.baseSphereColor = j(e.baseSphereColor, U.baseSphereColor), e.baseSphereOpacity = P(e.baseSphereOpacity, 1, 0, 1), e.globalOpacity = P(e.globalOpacity, 1, 0, 1), e.gridColor = j(e.gridColor, U.gridColor), e.backgroundColor = j(e.backgroundColor, U.backgroundColor), e.ambientColor = j(e.ambientColor, U.ambientColor), e.dirLightColor = j(e.dirLightColor, U.dirLightColor), e.rimLightColor = j(e.rimLightColor, U.rimLightColor), e.fillLightSkyColor = j(e.fillLightSkyColor, U.fillLightSkyColor), e.fillLightGroundColor = j(e.fillLightGroundColor, U.fillLightGroundColor), e.haloColor = j(e.haloColor, U.haloColor), e.cameraOutlineColor = j(e.cameraOutlineColor, U.cameraOutlineColor), e.transparentBackground = !!e.transparentBackground, e.ambientEnabled = !!e.ambientEnabled, e.dirLightEnabled = !!e.dirLightEnabled, e.rimLightEnabled = !!e.rimLightEnabled, e.fillLightEnabled = !!e.fillLightEnabled, e.ambientIntensity = P(e.ambientIntensity, 0.5, 0, 2), e.dirLightIntensity = P(e.dirLightIntensity, 1.2, 0, 5), e.rimLightIntensity = P(e.rimLightIntensity, 2, 0, 10), e.fillLightIntensity = P(e.fillLightIntensity, 0.5, 0, 3), e.haloIntensity = P(e.haloIntensity, 0.7, 0, 1), e.haloPower = P(e.haloPower, 15, 1, 50), e.showHalo = !!e.showHalo, e.showGrid = !!e.showGrid, e.gridOpacity = P(e.gridOpacity, 0.35, 0, 1), e.gridSpacing = P(e.gridSpacing, 20, 5, 45), e.gridRadius = P(e.gridRadius, 1.001, 1, 1.02), e.gridSegmentSize = P(e.gridSegmentSize, 1, 1, 10), e.countryRoughness = P(e.countryRoughness, 1, 0, 1), e.countryMetalness = P(e.countryMetalness, 0, 0, 1), e.countryEmissiveIntensity = P(e.countryEmissiveIntensity, 0.2, 0, 2), e.countryOpacity = P(e.countryOpacity, 1, 0, 1), e.countryRadius = P(e.countryRadius, 1.01, 1, 1.03), e.countryFillDetail = P(e.countryFillDetail, 1, 0.5, 3), e.outlineDetail = P(e.outlineDetail, 1, 0.5, 3), e.qualityPreset = Qe(e.qualityPreset), e.rendererPixelRatioMax = P(e.rendererPixelRatioMax, 2, 0.5, 3), e.sphereSegments = Math.round(P(e.sphereSegments, 128, 16, 256)), e.globeScale = P(e.globeScale, 1, 0.25, 4), e.showCameraOutline = !!e.showCameraOutline, e.cameraOutlineWidth = P(e.cameraOutlineWidth, 0.02, 1e-3, 0.2), e.cameraOutlineRadiusFactor = P(e.cameraOutlineRadiusFactor, 1, 0.5, 2), e.autoRotate = !!e.autoRotate, e.autoRotateSpeed = P(e.autoRotateSpeed, 1, 0, 5), e.inertia = !!e.inertia, e.inertiaFriction = P(e.inertiaFriction, 0.95, 0.8, 0.999), e.lockRotationX = !!e.lockRotationX, e.rotationX = P(e.rotationX, 0, -Math.PI * 0.45, Math.PI * 0.45), e.rotationY = P(e.rotationY, 0, -Math.PI * 100, Math.PI * 100), e.dirLightPos = Le(e.dirLightPos, U.dirLightPos), e.rimLightPos = Le(e.rimLightPos, U.rimLightPos), e;
+  return e.schemaVersion = fe, e.geoJsonResolution = te, e.geoJsonUrl = K(), e.progressiveLoading = !!e.progressiveLoading, e.batchSize = P(e.batchSize, 20, 5, 100), e.highlightCodes = Array.isArray(e.highlightCodes) ? e.highlightCodes.filter((n) => typeof n == "string").map((n) => n.trim().toUpperCase()).filter((n) => n.length > 0) : [...k.highlightCodes], e.highlightColor = N(e.highlightColor, k.highlightColor), e.defaultColor = N(e.defaultColor, k.defaultColor), e.outlineColor = N(e.outlineColor, k.outlineColor), e.outlineOpacity = P(e.outlineOpacity, 1, 0, 1), e.baseSphereColor = N(e.baseSphereColor, k.baseSphereColor), e.baseSphereOpacity = P(e.baseSphereOpacity, 1, 0, 1), e.globalOpacity = P(e.globalOpacity, 1, 0, 1), e.gridColor = N(e.gridColor, k.gridColor), e.backgroundColor = N(e.backgroundColor, k.backgroundColor), e.ambientColor = N(e.ambientColor, k.ambientColor), e.dirLightColor = N(e.dirLightColor, k.dirLightColor), e.rimLightColor = N(e.rimLightColor, k.rimLightColor), e.fillLightSkyColor = N(e.fillLightSkyColor, k.fillLightSkyColor), e.fillLightGroundColor = N(e.fillLightGroundColor, k.fillLightGroundColor), e.haloColor = N(e.haloColor, k.haloColor), e.cameraOutlineColor = N(e.cameraOutlineColor, k.cameraOutlineColor), e.transparentBackground = !!e.transparentBackground, e.ambientEnabled = !!e.ambientEnabled, e.dirLightEnabled = !!e.dirLightEnabled, e.rimLightEnabled = !!e.rimLightEnabled, e.fillLightEnabled = !!e.fillLightEnabled, e.ambientIntensity = P(e.ambientIntensity, 0.5, 0, 2), e.dirLightIntensity = P(e.dirLightIntensity, 1.2, 0, 5), e.rimLightIntensity = P(e.rimLightIntensity, 2, 0, 10), e.fillLightIntensity = P(e.fillLightIntensity, 0.5, 0, 3), e.haloIntensity = P(e.haloIntensity, 0.7, 0, 1), e.haloPower = P(e.haloPower, 15, 1, 50), e.showHalo = !!e.showHalo, e.showGrid = !!e.showGrid, e.gridOpacity = P(e.gridOpacity, 0.35, 0, 1), e.gridSpacing = P(e.gridSpacing, 20, 5, 45), e.gridRadius = P(e.gridRadius, 1.001, 1, 1.02), e.gridSegmentSize = P(e.gridSegmentSize, 1, 1, 10), e.countryRoughness = P(e.countryRoughness, 1, 0, 1), e.countryMetalness = P(e.countryMetalness, 0, 0, 1), e.countryEmissiveIntensity = P(e.countryEmissiveIntensity, 0.2, 0, 2), e.countryOpacity = P(e.countryOpacity, 1, 0, 1), e.countryRadius = P(e.countryRadius, 1.01, 1, 1.03), e.countryFillDetail = P(e.countryFillDetail, 1, 0.5, 3), e.outlineDetail = P(e.outlineDetail, 1, 0.5, 3), e.qualityPreset = et(e.qualityPreset), e.rendererPixelRatioMax = P(e.rendererPixelRatioMax, 2, 0.5, 3), e.sphereSegments = Math.round(P(e.sphereSegments, 128, 16, 256)), e.globeScale = P(e.globeScale, 1, 0.25, 4), e.showCameraOutline = !!e.showCameraOutline, e.cameraOutlineWidth = P(e.cameraOutlineWidth, 0.02, 1e-3, 0.2), e.cameraOutlineRadiusFactor = P(e.cameraOutlineRadiusFactor, 1, 0.5, 2), e.autoRotate = !!e.autoRotate, e.autoRotateSpeed = P(e.autoRotateSpeed, 1, 0, 5), e.inertia = !!e.inertia, e.inertiaFriction = P(e.inertiaFriction, 0.95, 0.8, 0.999), e.lockRotationX = !!e.lockRotationX, e.rotationX = P(e.rotationX, 0, -Math.PI * 0.45, Math.PI * 0.45), e.rotationY = P(e.rotationY, 0, -Math.PI * 100, Math.PI * 100), e.dirLightPos = Le(e.dirLightPos, k.dirLightPos), e.rimLightPos = Le(e.rimLightPos, k.rimLightPos), e;
 }
-function Qe(i) {
-  return i === "low" || i === "medium" || i === "high" ? i : U.qualityPreset;
+function et(i) {
+  return i === "low" || i === "medium" || i === "high" ? i : k.qualityPreset;
 }
-function $e(i) {
+function tt(i) {
   return {
     schemaVersion: fe,
     settings: he(i)
   };
 }
-function j(i, t) {
+function N(i, t) {
   if (typeof i != "string") return t;
   const e = i.trim();
-  return Ke.test(e) ? e.toLowerCase() : t;
+  return Ze.test(e) ? e.toLowerCase() : t;
 }
 function P(i, t, e, n) {
   const a = Number(i);
@@ -607,25 +612,25 @@ function Le(i, t) {
   };
 }
 const ce = 1;
-async function et(i = {}) {
+async function nt(i = {}) {
   const t = i.container || document.body, e = i.enableDebugPanel !== !1;
   let n, a, l, s = !1, r, f, g, h = null, c = !1, d, y, b, m, L, o = he({
-    ...U,
+    ...k,
     ...i.config || {}
   });
   return ne(o), o.geoJsonUrl = K(o.geoJsonResolution), m = ze(t), m.setBackground(o.backgroundColor, o.transparentBackground), m.setPixelRatioMax(o.rendererPixelRatioMax), L = Ge(m.scene, o), await M(), e && await O(), w(), {
-    setConfig: A,
+    setConfig: F,
     getConfig: E,
     destroy: V
   };
   async function x() {
-    return d || (d = import("./createCountries-Dc1236KI.js").then((p) => p.loadCountries)), d;
+    return d || (d = import("./createCountries-DJY1dMR1.js").then((p) => p.loadCountries)), d;
   }
   async function C() {
-    return y || (y = import("./controls-DLJLymkc.js").then((p) => p.DebugControls)), y;
+    return y || (y = import("./controls-BdRVNzLw.js").then((p) => p.DebugControls)), y;
   }
   async function M() {
-    n = new _.Group(), m.scene.add(n), I(), S(o), v(), r = We(ce, 1.15, o.haloColor, 64), ee(r, o), r.renderOrder = 1, m.scene.add(r), v(), F(), b = Fe(n, m.renderer.domElement, o), await u(), G();
+    n = new _.Group(), m.scene.add(n), I(), S(o), v(), r = We(ce, 1.15, o.haloColor, 64), ee(r, o), r.renderOrder = 1, m.scene.add(r), v(), D(), b = De(n, m.renderer.domElement, o), await u(), G();
   }
   async function O() {
     const p = await C();
@@ -638,22 +643,22 @@ async function et(i = {}) {
       onUpdateSceneVisuals: Re,
       onUpdatePerformance: Pe,
       onUpdateRotationSettings: Oe,
-      onImportConfig: (z) => void A(z),
+      onImportConfig: (z) => void F(z),
       onRequestRuntimeState: ge
     }), a.applySettings(o), l && a.setGeojsonData(l);
   }
   function G() {
     c || (h = requestAnimationFrame(G), b && b.update(), R(), m.renderer.render(m.scene, m.camera));
   }
-  async function A(p) {
+  async function F(p) {
     c || (o = he({
       ...o,
       ...p || {}
-    }), ne(o), o.geoJsonUrl = K(o.geoJsonResolution), S(o), L.update(o), r && ee(r, o), w(), v(), I(), F(), a && a.applySettings(o), await u());
+    }), ne(o), o.geoJsonUrl = K(o.geoJsonResolution), S(o), L.update(o), r && ee(r, o), w(), v(), I(), D(), a && a.applySettings(o), await u());
   }
   function E() {
     const p = ge();
-    return $e({
+    return tt({
       ...o,
       ...p
     });
@@ -664,7 +669,7 @@ async function et(i = {}) {
       console.warn("Already loading countries, skipping reload...");
       return;
     }
-    s = !0, D(), await (await x())(
+    s = !0, A(), await (await x())(
       n,
       o.geoJsonUrl,
       o.highlightCodes,
@@ -688,7 +693,7 @@ async function et(i = {}) {
       const p = o.baseSphereOpacity * o.globalOpacity;
       f.material.opacity = p, f.material.transparent = p < 1;
     }
-    n && n.scale.setScalar(o.globeScale), r && r.scale.setScalar(1.15 * o.globeScale), k();
+    n && n.scale.setScalar(o.globeScale), r && r.scale.setScalar(1.15 * o.globeScale), U();
   }
   function I() {
     if (!n) return;
@@ -702,8 +707,8 @@ async function et(i = {}) {
     });
     f = new _.Mesh(p, q), f.renderOrder = 0, n.add(f);
   }
-  function F() {
-    T(), qe(
+  function D() {
+    J(), qe(
       n,
       o.gridRadius,
       o.gridSpacing,
@@ -714,7 +719,7 @@ async function et(i = {}) {
       p.type === "Line" && p.renderOrder === 2 && (p.material.opacity = o.gridOpacity * o.globalOpacity, p.material.transparent = p.material.opacity < 1, p.visible = o.showGrid);
     });
   }
-  function k() {
+  function U() {
     if (!m || (g && (g.geometry.dispose(), g.material.dispose(), m.scene.remove(g), g = null), !o.showCameraOutline)) return;
     const p = ce * o.globeScale * o.cameraOutlineRadiusFactor, z = o.cameraOutlineWidth, q = Math.max(p - z * 0.5, 1e-3), oe = p + z * 0.5, re = new _.RingGeometry(q, oe, 128), ae = new _.MeshBasicMaterial({
       color: o.cameraOutlineColor,
@@ -729,7 +734,7 @@ async function et(i = {}) {
   function R() {
     !g || !n || (g.position.copy(n.position), g.quaternion.copy(m.camera.quaternion));
   }
-  function D() {
+  function A() {
     const p = [];
     n.traverse((z) => {
       (z.type === "Mesh" && z.renderOrder === 3 || z.type === "LineLoop" && z.renderOrder === 4) && p.push(z);
@@ -737,7 +742,7 @@ async function et(i = {}) {
       z.geometry.dispose(), z.material.dispose(), n.remove(z);
     });
   }
-  function T() {
+  function J() {
     if (!n) return;
     const p = [];
     n.traverse((z) => {
@@ -746,11 +751,11 @@ async function et(i = {}) {
       z.geometry.dispose(), z.material.dispose(), n.remove(z);
     });
   }
-  function N() {
+  function j() {
     n && f && (f.geometry.dispose(), f.material.dispose(), n.remove(f), f = null);
   }
   function V() {
-    c || (c = !0, h !== null && (cancelAnimationFrame(h), h = null), a && (a.destroy(), a = null), b && (b.destroy(), b = null), D(), T(), N(), r && (r.geometry && r.geometry.dispose(), r.material && r.material.dispose(), m.scene.remove(r), r = null), g && (g.geometry && g.geometry.dispose(), g.material && g.material.dispose(), m.scene.remove(g), g = null), n && (m.scene.remove(n), n = null), L && (L.destroy(), L = null), m && (m.destroy(), m = null));
+    c || (c = !0, h !== null && (cancelAnimationFrame(h), h = null), a && (a.destroy(), a = null), b && (b.destroy(), b = null), A(), J(), j(), r && (r.geometry && r.geometry.dispose(), r.material && r.material.dispose(), m.scene.remove(r), r = null), g && (g.geometry && g.geometry.dispose(), g.material && g.material.dispose(), m.scene.remove(g), g = null), n && (m.scene.remove(n), n = null), L && (L.destroy(), L = null), m && (m.destroy(), m = null));
   }
   function ie(p) {
     const {
@@ -769,7 +774,7 @@ async function et(i = {}) {
     o.highlightCodes = [...p.selectedCountries], u();
   }
   function xe(p) {
-    Object.assign(o, p), F();
+    Object.assign(o, p), D();
   }
   function Me(p) {
     Object.assign(o, p), L.update(o);
@@ -778,10 +783,10 @@ async function et(i = {}) {
     Object.assign(o, p), r && ee(r, o);
   }
   function Re(p) {
-    Object.assign(o, p), v(), r && ee(r, o), (p.gridColor || p.gridSegmentSize || p.gridRadius || p.gridSpacing) && F(), p.globalOpacity !== void 0 && (F(), u());
+    Object.assign(o, p), v(), r && ee(r, o), (p.gridColor || p.gridSegmentSize || p.gridRadius || p.gridSpacing) && D(), p.globalOpacity !== void 0 && (D(), u());
   }
   function Pe(p) {
-    Object.assign(o, p), ne(o), o.geoJsonUrl = K(o.geoJsonResolution), v(), I(), F(), u();
+    Object.assign(o, p), ne(o), o.geoJsonUrl = K(o.geoJsonResolution), v(), I(), D(), u();
   }
   function Oe(p) {
     Object.assign(o, p), w();
@@ -802,13 +807,13 @@ async function et(i = {}) {
   }
 }
 export {
-  U as D,
+  k as D,
   fe as G,
-  et as a,
-  Ze as c,
+  nt as a,
+  it as c,
   K as g,
   ue as l,
   he as m,
   Ve as s,
-  $e as t
+  tt as t
 };

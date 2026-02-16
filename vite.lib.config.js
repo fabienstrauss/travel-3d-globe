@@ -5,6 +5,7 @@ export default defineConfig({
     build: {
         outDir: 'dist-lib',
         emptyOutDir: true,
+        assetsInlineLimit: 0,
         lib: {
             entry: resolve(__dirname, 'src/index.js'),
             name: 'Travel3DGlobe',
