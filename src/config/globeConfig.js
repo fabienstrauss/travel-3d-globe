@@ -1,8 +1,22 @@
+const GEOJSON_FILENAME = 'ne_110m_admin_0_countries.json';
+
+function resolveDefaultGeoJsonUrl() {
+    // In source/dev we load from src/assets. In published dist we load from dist-lib/geojson.
+    const moduleUrl = import.meta.url;
+    const geoJsonDir = moduleUrl.includes('/src/config/')
+        ? '../assets/geojson'
+        : './geojson';
+    // Keep the path dynamic so bundlers do not inline this large JSON as a data URL.
+    return new URL(`${geoJsonDir}/${GEOJSON_FILENAME}`, moduleUrl).href;
+}
+
+const geoJson110mUrl = resolveDefaultGeoJsonUrl();
+
 /**
  * Versioned globe config defaults, validation/coercion, and serialization helpers.
  */
 const RESOLUTION_TO_GEOJSON_URL = {
-    '110m': '/geojson/ne_110m_admin_0_countries.json',
+    '110m': geoJson110mUrl,
 };
 
 const FIXED_RESOLUTION = '110m';
