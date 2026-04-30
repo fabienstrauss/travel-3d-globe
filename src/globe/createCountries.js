@@ -24,6 +24,11 @@ export async function loadCountries(globeGroup, geojsonUrl, highlightCodes = [],
     console.log(`Loading countries from: ${geojsonUrl} (Progressive: ${progressive}, Batch: ${batchSize})`);
 
     const res = await fetch(geojsonUrl);
+    if (!res.ok) {
+        const bodyPreview = (await res.text()).slice(0, 120);
+        throw new Error(`Failed to load GeoJSON from ${geojsonUrl}: ${res.status} ${res.statusText}. Response starts with: ${bodyPreview}`);
+    }
+
     const data = await res.json();
 
     const loadTime = performance.now() - startTime;

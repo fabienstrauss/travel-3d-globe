@@ -228,13 +228,13 @@ class de {
       if (R === -1) continue;
       let J = this._addTriangle(R, v, n[R], -1, -1, a[R]);
       a[v] = this._legalize(J + 2), a[R] = J, E++;
-      let j = n[R];
-      for (; A = n[j], $(I, D, t[2 * j], t[2 * j + 1], t[2 * A], t[2 * A + 1]) < 0; )
-        J = this._addTriangle(j, v, A, a[v], -1, a[j]), a[v] = this._legalize(J + 2), n[j] = j, E--, j = A;
+      let N = n[R];
+      for (; A = n[N], $(I, D, t[2 * N], t[2 * N + 1], t[2 * A], t[2 * A + 1]) < 0; )
+        J = this._addTriangle(N, v, A, a[v], -1, a[N]), a[v] = this._legalize(J + 2), n[N] = N, E--, N = A;
       if (R === U)
         for (; A = e[R], $(I, D, t[2 * A], t[2 * A + 1], t[2 * R], t[2 * R + 1]) < 0; )
           J = this._addTriangle(A, v, R, -1, a[R], a[A]), this._legalize(J + 2), a[A] = J, n[R] = R, E--, R = A;
-      this._hullStart = e[v] = R, n[R] = e[j] = v, n[v] = j, l[this._hashKey(I, D)] = v, l[this._hashKey(t[2 * R], t[2 * R + 1])] = R;
+      this._hullStart = e[v] = R, n[R] = e[N] = v, n[v] = N, l[this._hashKey(I, D)] = v, l[this._hashKey(t[2 * R], t[2 * R + 1])] = R;
     }
     this.hull = new Uint32Array(E);
     for (let u = 0, w = this._hullStart; u < E; u++)
@@ -242,7 +242,7 @@ class de {
     this.triangles = this._triangles.subarray(0, this.trianglesLen), this.halfedges = this._halfedges.subarray(0, this.trianglesLen);
   }
   _hashKey(t, e) {
-    return Math.floor(Ne(t - this._cx, e - this._cy) * this._hashSize) % this._hashSize;
+    return Math.floor(je(t - this._cx, e - this._cy) * this._hashSize) % this._hashSize;
   }
   _legalize(t) {
     const { _triangles: e, _halfedges: n, coords: a } = this;
@@ -255,7 +255,7 @@ class de {
         continue;
       }
       const g = r - r % 3, h = f + (t + 1) % 3, c = g + (r + 2) % 3, d = e[s], y = e[t], b = e[h], m = e[c];
-      if (je(
+      if (Ne(
         a[2 * d],
         a[2 * d + 1],
         a[2 * y],
@@ -296,7 +296,7 @@ class de {
     return this._triangles[r] = t, this._triangles[r + 1] = e, this._triangles[r + 2] = n, this._link(r, a), this._link(r + 1, l), this._link(r + 2, s), this.trianglesLen += 3, r;
   }
 }
-function Ne(i, t) {
+function je(i, t) {
   const e = i / (Math.abs(i) + Math.abs(t));
   return (t > 0 ? 3 - e : 1 + e) / 4;
 }
@@ -304,7 +304,7 @@ function se(i, t, e, n) {
   const a = i - e, l = t - n;
   return a * a + l * l;
 }
-function je(i, t, e, n, a, l, s, r) {
+function Ne(i, t, e, n, a, l, s, r) {
   const f = i - s, g = t - r, h = e - s, c = n - r, d = a - s, y = l - r, b = f * f + g * g, m = h * h + c * c, L = d * d + y * y;
   return f * (c * L - m * y) - g * (h * L - m * d) + b * (h * y - c * d) < 0;
 }
@@ -506,8 +506,9 @@ function ee(i, t) {
 }
 const Ke = "ne_110m_admin_0_countries.json";
 function Qe() {
-  const i = import.meta.url, t = i.includes("/src/config/") ? "../assets/geojson" : "./geojson";
-  return new URL(`${t}/${Ke}`, i).href;
+  const i = import.meta.url;
+  let t = "./geojson";
+  return i.includes("/src/config/") ? t = "../assets/geojson" : i.includes("/assets/") && (t = "../geojson"), new URL(`${t}/${Ke}`, i).href;
 }
 const $e = Qe(), Se = {
   "110m": $e
@@ -583,7 +584,7 @@ function he(i) {
     ...k,
     ...t
   };
-  return e.schemaVersion = fe, e.geoJsonResolution = te, e.geoJsonUrl = K(), e.progressiveLoading = !!e.progressiveLoading, e.batchSize = P(e.batchSize, 20, 5, 100), e.highlightCodes = Array.isArray(e.highlightCodes) ? e.highlightCodes.filter((n) => typeof n == "string").map((n) => n.trim().toUpperCase()).filter((n) => n.length > 0) : [...k.highlightCodes], e.highlightColor = N(e.highlightColor, k.highlightColor), e.defaultColor = N(e.defaultColor, k.defaultColor), e.outlineColor = N(e.outlineColor, k.outlineColor), e.outlineOpacity = P(e.outlineOpacity, 1, 0, 1), e.baseSphereColor = N(e.baseSphereColor, k.baseSphereColor), e.baseSphereOpacity = P(e.baseSphereOpacity, 1, 0, 1), e.globalOpacity = P(e.globalOpacity, 1, 0, 1), e.gridColor = N(e.gridColor, k.gridColor), e.backgroundColor = N(e.backgroundColor, k.backgroundColor), e.ambientColor = N(e.ambientColor, k.ambientColor), e.dirLightColor = N(e.dirLightColor, k.dirLightColor), e.rimLightColor = N(e.rimLightColor, k.rimLightColor), e.fillLightSkyColor = N(e.fillLightSkyColor, k.fillLightSkyColor), e.fillLightGroundColor = N(e.fillLightGroundColor, k.fillLightGroundColor), e.haloColor = N(e.haloColor, k.haloColor), e.cameraOutlineColor = N(e.cameraOutlineColor, k.cameraOutlineColor), e.transparentBackground = !!e.transparentBackground, e.ambientEnabled = !!e.ambientEnabled, e.dirLightEnabled = !!e.dirLightEnabled, e.rimLightEnabled = !!e.rimLightEnabled, e.fillLightEnabled = !!e.fillLightEnabled, e.ambientIntensity = P(e.ambientIntensity, 0.5, 0, 2), e.dirLightIntensity = P(e.dirLightIntensity, 1.2, 0, 5), e.rimLightIntensity = P(e.rimLightIntensity, 2, 0, 10), e.fillLightIntensity = P(e.fillLightIntensity, 0.5, 0, 3), e.haloIntensity = P(e.haloIntensity, 0.7, 0, 1), e.haloPower = P(e.haloPower, 15, 1, 50), e.showHalo = !!e.showHalo, e.showGrid = !!e.showGrid, e.gridOpacity = P(e.gridOpacity, 0.35, 0, 1), e.gridSpacing = P(e.gridSpacing, 20, 5, 45), e.gridRadius = P(e.gridRadius, 1.001, 1, 1.02), e.gridSegmentSize = P(e.gridSegmentSize, 1, 1, 10), e.countryRoughness = P(e.countryRoughness, 1, 0, 1), e.countryMetalness = P(e.countryMetalness, 0, 0, 1), e.countryEmissiveIntensity = P(e.countryEmissiveIntensity, 0.2, 0, 2), e.countryOpacity = P(e.countryOpacity, 1, 0, 1), e.countryRadius = P(e.countryRadius, 1.01, 1, 1.03), e.countryFillDetail = P(e.countryFillDetail, 1, 0.5, 3), e.outlineDetail = P(e.outlineDetail, 1, 0.5, 3), e.qualityPreset = et(e.qualityPreset), e.rendererPixelRatioMax = P(e.rendererPixelRatioMax, 2, 0.5, 3), e.sphereSegments = Math.round(P(e.sphereSegments, 128, 16, 256)), e.globeScale = P(e.globeScale, 1, 0.25, 4), e.showCameraOutline = !!e.showCameraOutline, e.cameraOutlineWidth = P(e.cameraOutlineWidth, 0.02, 1e-3, 0.2), e.cameraOutlineRadiusFactor = P(e.cameraOutlineRadiusFactor, 1, 0.5, 2), e.autoRotate = !!e.autoRotate, e.autoRotateSpeed = P(e.autoRotateSpeed, 1, 0, 5), e.inertia = !!e.inertia, e.inertiaFriction = P(e.inertiaFriction, 0.95, 0.8, 0.999), e.lockRotationX = !!e.lockRotationX, e.rotationX = P(e.rotationX, 0, -Math.PI * 0.45, Math.PI * 0.45), e.rotationY = P(e.rotationY, 0, -Math.PI * 100, Math.PI * 100), e.dirLightPos = Le(e.dirLightPos, k.dirLightPos), e.rimLightPos = Le(e.rimLightPos, k.rimLightPos), e;
+  return e.schemaVersion = fe, e.geoJsonResolution = te, e.geoJsonUrl = K(), e.progressiveLoading = !!e.progressiveLoading, e.batchSize = P(e.batchSize, 20, 5, 100), e.highlightCodes = Array.isArray(e.highlightCodes) ? e.highlightCodes.filter((n) => typeof n == "string").map((n) => n.trim().toUpperCase()).filter((n) => n.length > 0) : [...k.highlightCodes], e.highlightColor = j(e.highlightColor, k.highlightColor), e.defaultColor = j(e.defaultColor, k.defaultColor), e.outlineColor = j(e.outlineColor, k.outlineColor), e.outlineOpacity = P(e.outlineOpacity, 1, 0, 1), e.baseSphereColor = j(e.baseSphereColor, k.baseSphereColor), e.baseSphereOpacity = P(e.baseSphereOpacity, 1, 0, 1), e.globalOpacity = P(e.globalOpacity, 1, 0, 1), e.gridColor = j(e.gridColor, k.gridColor), e.backgroundColor = j(e.backgroundColor, k.backgroundColor), e.ambientColor = j(e.ambientColor, k.ambientColor), e.dirLightColor = j(e.dirLightColor, k.dirLightColor), e.rimLightColor = j(e.rimLightColor, k.rimLightColor), e.fillLightSkyColor = j(e.fillLightSkyColor, k.fillLightSkyColor), e.fillLightGroundColor = j(e.fillLightGroundColor, k.fillLightGroundColor), e.haloColor = j(e.haloColor, k.haloColor), e.cameraOutlineColor = j(e.cameraOutlineColor, k.cameraOutlineColor), e.transparentBackground = !!e.transparentBackground, e.ambientEnabled = !!e.ambientEnabled, e.dirLightEnabled = !!e.dirLightEnabled, e.rimLightEnabled = !!e.rimLightEnabled, e.fillLightEnabled = !!e.fillLightEnabled, e.ambientIntensity = P(e.ambientIntensity, 0.5, 0, 2), e.dirLightIntensity = P(e.dirLightIntensity, 1.2, 0, 5), e.rimLightIntensity = P(e.rimLightIntensity, 2, 0, 10), e.fillLightIntensity = P(e.fillLightIntensity, 0.5, 0, 3), e.haloIntensity = P(e.haloIntensity, 0.7, 0, 1), e.haloPower = P(e.haloPower, 15, 1, 50), e.showHalo = !!e.showHalo, e.showGrid = !!e.showGrid, e.gridOpacity = P(e.gridOpacity, 0.35, 0, 1), e.gridSpacing = P(e.gridSpacing, 20, 5, 45), e.gridRadius = P(e.gridRadius, 1.001, 1, 1.02), e.gridSegmentSize = P(e.gridSegmentSize, 1, 1, 10), e.countryRoughness = P(e.countryRoughness, 1, 0, 1), e.countryMetalness = P(e.countryMetalness, 0, 0, 1), e.countryEmissiveIntensity = P(e.countryEmissiveIntensity, 0.2, 0, 2), e.countryOpacity = P(e.countryOpacity, 1, 0, 1), e.countryRadius = P(e.countryRadius, 1.01, 1, 1.03), e.countryFillDetail = P(e.countryFillDetail, 1, 0.5, 3), e.outlineDetail = P(e.outlineDetail, 1, 0.5, 3), e.qualityPreset = et(e.qualityPreset), e.rendererPixelRatioMax = P(e.rendererPixelRatioMax, 2, 0.5, 3), e.sphereSegments = Math.round(P(e.sphereSegments, 128, 16, 256)), e.globeScale = P(e.globeScale, 1, 0.25, 4), e.showCameraOutline = !!e.showCameraOutline, e.cameraOutlineWidth = P(e.cameraOutlineWidth, 0.02, 1e-3, 0.2), e.cameraOutlineRadiusFactor = P(e.cameraOutlineRadiusFactor, 1, 0.5, 2), e.autoRotate = !!e.autoRotate, e.autoRotateSpeed = P(e.autoRotateSpeed, 1, 0, 5), e.inertia = !!e.inertia, e.inertiaFriction = P(e.inertiaFriction, 0.95, 0.8, 0.999), e.lockRotationX = !!e.lockRotationX, e.rotationX = P(e.rotationX, 0, -Math.PI * 0.45, Math.PI * 0.45), e.rotationY = P(e.rotationY, 0, -Math.PI * 100, Math.PI * 100), e.dirLightPos = Le(e.dirLightPos, k.dirLightPos), e.rimLightPos = Le(e.rimLightPos, k.rimLightPos), e;
 }
 function et(i) {
   return i === "low" || i === "medium" || i === "high" ? i : k.qualityPreset;
@@ -594,7 +595,7 @@ function tt(i) {
     settings: he(i)
   };
 }
-function N(i, t) {
+function j(i, t) {
   if (typeof i != "string") return t;
   const e = i.trim();
   return Ze.test(e) ? e.toLowerCase() : t;
@@ -624,10 +625,10 @@ async function nt(i = {}) {
     destroy: V
   };
   async function x() {
-    return d || (d = import("./createCountries-DJY1dMR1.js").then((p) => p.loadCountries)), d;
+    return d || (d = import("./createCountries-CwiugRqp.js").then((p) => p.loadCountries)), d;
   }
   async function C() {
-    return y || (y = import("./controls-BdRVNzLw.js").then((p) => p.DebugControls)), y;
+    return y || (y = import("./controls-Cr_zQAab.js").then((p) => p.DebugControls)), y;
   }
   async function M() {
     n = new _.Group(), m.scene.add(n), I(), S(o), v(), r = We(ce, 1.15, o.haloColor, 64), ee(r, o), r.renderOrder = 1, m.scene.add(r), v(), D(), b = De(n, m.renderer.domElement, o), await u(), G();
@@ -751,11 +752,11 @@ async function nt(i = {}) {
       z.geometry.dispose(), z.material.dispose(), n.remove(z);
     });
   }
-  function j() {
+  function N() {
     n && f && (f.geometry.dispose(), f.material.dispose(), n.remove(f), f = null);
   }
   function V() {
-    c || (c = !0, h !== null && (cancelAnimationFrame(h), h = null), a && (a.destroy(), a = null), b && (b.destroy(), b = null), A(), J(), j(), r && (r.geometry && r.geometry.dispose(), r.material && r.material.dispose(), m.scene.remove(r), r = null), g && (g.geometry && g.geometry.dispose(), g.material && g.material.dispose(), m.scene.remove(g), g = null), n && (m.scene.remove(n), n = null), L && (L.destroy(), L = null), m && (m.destroy(), m = null));
+    c || (c = !0, h !== null && (cancelAnimationFrame(h), h = null), a && (a.destroy(), a = null), b && (b.destroy(), b = null), A(), J(), N(), r && (r.geometry && r.geometry.dispose(), r.material && r.material.dispose(), m.scene.remove(r), r = null), g && (g.geometry && g.geometry.dispose(), g.material && g.material.dispose(), m.scene.remove(g), g = null), n && (m.scene.remove(n), n = null), L && (L.destroy(), L = null), m && (m.destroy(), m = null));
   }
   function ie(p) {
     const {
