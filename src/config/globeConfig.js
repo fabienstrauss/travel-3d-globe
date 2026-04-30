@@ -1,11 +1,16 @@
 const GEOJSON_FILENAME = 'ne_110m_admin_0_countries.json';
 
 function resolveDefaultGeoJsonUrl() {
-    // In source/dev we load from src/assets. In published dist we load from dist-lib/geojson.
+    // Keep the fetch target relative to the emitted module location for each build mode.
     const moduleUrl = import.meta.url;
-    const geoJsonDir = moduleUrl.includes('/src/config/')
-        ? '../assets/geojson'
-        : './geojson';
+    let geoJsonDir = './geojson';
+
+    if (moduleUrl.includes('/src/config/')) {
+        geoJsonDir = '../assets/geojson';
+    } else if (moduleUrl.includes('/assets/')) {
+        geoJsonDir = '../geojson';
+    }
+
     // Keep the path dynamic so bundlers do not inline this large JSON as a data URL.
     return new URL(`${geoJsonDir}/${GEOJSON_FILENAME}`, moduleUrl).href;
 }
